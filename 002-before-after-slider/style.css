@@ -1,0 +1,271 @@
+:root {
+  /* ClaudeParts シリーズ共通トークン（001と共通） */
+  --paper: #ECE2CB;
+  --paper-dark: #DFD2B2;
+  --blueprint: #1C3F5E;
+  --blueprint-line: #2E5578;
+  --ink: #2A241C;
+  --stamp-red: #A33327;
+  --steel: #7A7264;
+  --mustard: #C89B3C;
+
+  --font-display: "Shippori Mincho", serif;
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--blueprint);
+  background-image:
+    linear-gradient(var(--blueprint-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blueprint-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: var(--font-body);
+  color: var(--paper);
+  min-height: 100vh;
+  padding: 48px 24px 80px;
+}
+
+/* ---------- ページ見出し（デモ用） ---------- */
+
+.jc-page-header {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.jc-page-header__eyebrow {
+  margin: 0 0 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  color: var(--mustard);
+  text-transform: uppercase;
+}
+
+.jc-page-header__title {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--paper);
+}
+
+.jc-page-header__lead {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: #C9D3DC;
+}
+
+/* ---------- グリッド ---------- */
+
+.jc-stage { max-width: 980px; margin: 0 auto; }
+
+.jc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+/* ---------- カード ---------- */
+
+.ba-card {
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.4) inset,
+    0 18px 30px -14px rgba(0,0,0,0.55);
+  overflow: hidden;
+}
+
+.ba-card__body {
+  padding: 20px 22px 14px;
+}
+
+.ba-card__eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--steel);
+}
+
+.ba-card__no {
+  font-variant-numeric: tabular-nums;
+  color: var(--stamp-red);
+  font-weight: 700;
+}
+
+.ba-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.ba-card__caption {
+  margin: 0;
+  padding: 12px 22px 20px;
+  font-size: 0.76rem;
+  color: var(--steel);
+}
+
+/* ---------- スライダー本体 ---------- */
+
+.ba-slider {
+  position: relative;
+  margin: 0 22px;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(42,36,28,0.15);
+}
+
+.ba-slider__frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--paper-dark);
+}
+
+/* Before / After プレースホルダー */
+
+.ba-slider__img {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ba-slider__img--before {
+  background: var(--paper-dark);
+}
+
+.ba-slider__img--after {
+  background: #E4DAC0;
+  clip-path: inset(0 calc(100% - (var(--pos) * 1%)) 0 0);
+}
+
+.ba-slider__icon {
+  width: 88px;
+  height: 88px;
+}
+
+.ba-slider__icon--before {
+  color: rgba(42,36,28,0.35);
+}
+
+.ba-slider__icon--after {
+  color: rgba(42,36,28,0.6);
+}
+
+.ba-slider__tag {
+  position: absolute;
+  top: 12px;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--blueprint);
+  color: var(--paper);
+  transition: opacity 0.2s ease;
+}
+
+.ba-slider__tag--before { right: 12px; }
+.ba-slider__tag--after  { left: 12px; }
+
+/* pos(0=Beforeのみ 〜 100=Afterのみ)に応じてタグの濃淡を切り替える */
+.ba-slider__tag--before { opacity: clamp(0, calc((92 - var(--pos)) / 8), 1); }
+.ba-slider__tag--after  { opacity: clamp(0, calc((var(--pos) - 8) / 8), 1); }
+
+/* ---------- 境界線（巻尺の目盛り） ---------- */
+
+.ba-slider__divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--pos) * 1%);
+  width: 0;
+  border-left: 2px dashed var(--paper);
+  transform: translateX(-1px);
+  pointer-events: none;
+}
+
+.ba-slider__handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.35));
+}
+
+/* ---------- レンジ入力（実際の操作部） ---------- */
+
+.ba-slider__range {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: ew-resize;
+}
+
+.ba-slider__range:focus-visible {
+  outline: none;
+}
+
+.ba-slider__range::-webkit-slider-runnable-track {
+  background: transparent;
+  height: 40px;
+}
+
+.ba-slider__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.ba-slider__range::-moz-range-track {
+  background: transparent;
+  height: 40px;
+  border: none;
+}
+
+.ba-slider__range::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: ew-resize;
+}
+
+.ba-slider__range:focus-visible ~ .ba-slider__divider .ba-slider__handle svg circle {
+  stroke-width: 3;
+}
+
+/* ---------- レスポンシブ ---------- */
+
+@media (max-width: 420px) {
+  body { padding: 32px 16px 60px; }
+  .ba-slider { margin: 0 16px; }
+  .ba-card__body,
+  .ba-card__caption { padding-left: 16px; padding-right: 16px; }
+}
+
+/* ---------- モーション低減設定への配慮 ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .ba-slider__tag { transition: none; }
+}
