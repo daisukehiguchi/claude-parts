@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClaudeParts. 004 / 保証・アフターサービス案内カード</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="jc-page-header">
+  <p class="jc-page-header__eyebrow">ClaudeParts. 004</p>
+  <h1 class="jc-page-header__title">保証・アフターサービス案内カード</h1>
+  <p class="jc-page-header__desc">保証年数バッジと点検スケジュールをひとつの証書に凝縮したパーツです。予定の点検をクリックすると、済のハンコが押されます。</p>
+</header>
+
+<main class="jc-stage">
+
+  <article class="wc-card" aria-label="保証書">
+
+    <div class="wc-card__perforation" aria-hidden="true"></div>
+
+    <div class="wc-card__body">
+
+      <div class="wc-card__head">
+        <div class="wc-card__head-text">
+          <p class="wc-card__eyebrow">工事完了保証書</p>
+          <h2 class="wc-card__title">外壁塗装工事一式</h2>
+          <p class="wc-card__spec">
+            <span class="wc-card__spec-row"><span>発行日</span><span>2026年3月14日</span></span>
+            <span class="wc-card__spec-row"><span>証書番号</span><span>No. 2026-0142</span></span>
+            <span class="wc-card__spec-row"><span>施主</span><span>おじこさん 様</span></span>
+          </p>
+        </div>
+
+        <div class="wc-seal" role="img" aria-label="10年保証">
+          <svg class="wc-seal__ring" viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="56" />
+            <circle cx="60" cy="60" r="47" />
+          </svg>
+          <div class="wc-seal__text">
+            <span class="wc-seal__num">10</span>
+            <span class="wc-seal__unit">年保証</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="wc-card__divider" aria-hidden="true"></div>
+
+      <div class="wc-schedule">
+        <p class="wc-schedule__label">点検スケジュール<span class="wc-schedule__hint">（クリックで済にできます）</span></p>
+
+        <ol class="wc-schedule__list">
+
+          <li class="wc-check" data-status="done">
+            <button type="button" class="wc-check__node" aria-pressed="true">
+              <span class="wc-check__stamp" aria-hidden="true">済</span>
+            </button>
+            <span class="wc-check__label">1ヶ月点検</span>
+            <span class="wc-check__date">2026.4</span>
+          </li>
+
+          <li class="wc-check" data-status="done">
+            <button type="button" class="wc-check__node" aria-pressed="true">
+              <span class="wc-check__stamp" aria-hidden="true">済</span>
+            </button>
+            <span class="wc-check__label">6ヶ月点検</span>
+            <span class="wc-check__date">2026.9</span>
+          </li>
+
+          <li class="wc-check" data-status="done">
+            <button type="button" class="wc-check__node" aria-pressed="true">
+              <span class="wc-check__stamp" aria-hidden="true">済</span>
+            </button>
+            <span class="wc-check__label">1年点検</span>
+            <span class="wc-check__date">2027.3</span>
+          </li>
+
+          <li class="wc-check" data-status="upcoming">
+            <button type="button" class="wc-check__node" aria-pressed="false">
+              <span class="wc-check__stamp" aria-hidden="true">済</span>
+            </button>
+            <span class="wc-check__label">5年点検</span>
+            <span class="wc-check__date">2031.3</span>
+          </li>
+
+          <li class="wc-check" data-status="upcoming">
+            <button type="button" class="wc-check__node" aria-pressed="false">
+              <span class="wc-check__stamp" aria-hidden="true">済</span>
+            </button>
+            <span class="wc-check__label">10年点検</span>
+            <span class="wc-check__date">2036.3</span>
+          </li>
+
+        </ol>
+      </div>
+
+      <div class="wc-card__divider" aria-hidden="true"></div>
+
+      <div class="wc-contact">
+        <p class="wc-contact__row"><span>保証対象</span><span>外壁塗装・防水処理</span></p>
+        <p class="wc-contact__row"><span>お問い合わせ</span><span>0120-XXX-XXX（平日 9:00-18:00）</span></p>
+      </div>
+
+    </div>
+  </article>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
