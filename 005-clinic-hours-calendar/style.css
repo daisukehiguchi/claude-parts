@@ -1,0 +1,498 @@
+:root {
+  --bg: #eef4f3;
+  --surface: #ffffff;
+  --primary: #1f7a6c;
+  --primary-soft: #e1f3ef;
+  --amber: #c98a3d;
+  --amber-soft: #faf0e0;
+  --coral: #c4665c;
+  --coral-soft: #f6e8e6;
+  --ink: #1f2a28;
+  --muted: #6d7d7a;
+  --line: #e2eae8;
+
+  --font: "Noto Sans JP", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font);
+  color: var(--ink);
+  padding: 48px 20px 80px;
+}
+
+/* ---------- ページヘッダー ---------- */
+
+.jc-page-header {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.jc-page-header__eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+}
+
+.jc-page-header__title {
+  margin: 0 0 12px;
+  font-family: var(--font);
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.jc-page-header__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.jc-stage {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- カード全体 ---------- */
+
+.cc-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin-top: 4px;
+}
+
+.cc-card__top {
+  height: 5px;
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(90deg, var(--primary), #4ba393);
+}
+
+.cc-card__body {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  padding: 26px 24px 26px;
+  box-shadow: 0 12px 32px rgba(31, 42, 40, 0.06);
+}
+
+/* ---------- カードヘッダー ---------- */
+
+.cc-card__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.cc-card__eyebrow {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--primary);
+}
+
+.cc-card__title {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.cc-card__nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cc-card__month {
+  margin: 0;
+  min-width: 92px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.cc-nav-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.cc-nav-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.cc-nav-btn:active {
+  transform: scale(0.94);
+}
+
+/* ---------- パルスライン（署名要素） ---------- */
+
+.cc-pulse-line {
+  display: block;
+  width: 100%;
+  height: 20px;
+  margin: 10px 0 16px;
+}
+
+.cc-pulse-line path {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  opacity: 0.55;
+  animation: cc-draw 1.1s ease-out 0.15s forwards;
+}
+
+@keyframes cc-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-pulse-line path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ---------- カレンダー ---------- */
+
+.cc-calendar {
+  margin-bottom: 14px;
+}
+
+.cc-calendar__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 6px;
+}
+
+.cc-calendar__weekdays span {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.cc-calendar__weekdays .is-sun {
+  color: var(--coral);
+}
+
+.cc-calendar__weekdays .is-sat {
+  color: #3f7fa6;
+}
+
+.cc-calendar__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.cc-day {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: #f6faf9;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font);
+  color: var(--ink);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.cc-day:hover:not(.is-empty) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(31, 42, 40, 0.1);
+}
+
+.cc-day.is-empty {
+  visibility: hidden;
+  cursor: default;
+}
+
+.cc-day__badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.cc-day--open {
+  background: var(--primary-soft);
+}
+
+.cc-day--open .cc-day__badge {
+  color: var(--primary);
+}
+
+.cc-day--am {
+  background: var(--amber-soft);
+}
+
+.cc-day--am .cc-day__badge {
+  color: var(--amber);
+}
+
+.cc-day--closed {
+  background: #f3f6f5;
+  color: rgba(31, 42, 40, 0.4);
+}
+
+.cc-day--closed .cc-day__badge {
+  color: var(--coral);
+}
+
+.cc-day--irregular {
+  background: var(--coral-soft);
+  color: rgba(31, 42, 40, 0.55);
+}
+
+.cc-day--irregular .cc-day__badge {
+  color: var(--coral);
+}
+
+.cc-day--irregular::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.cc-day.is-today {
+  border-color: var(--primary);
+}
+
+.cc-day.is-today::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 0 rgba(31, 122, 108, 0.5);
+  animation: cc-pulse 1.8s ease-out infinite;
+}
+
+@keyframes cc-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(31, 122, 108, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(31, 122, 108, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(31, 122, 108, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-day.is-today::before {
+    animation: none;
+  }
+}
+
+.cc-day.is-selected {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+/* ---------- 凡例 ---------- */
+
+.cc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  margin: 0 0 4px;
+  padding: 0;
+  list-style: none;
+}
+
+.cc-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.cc-legend__swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.cc-legend__swatch--open {
+  background: var(--primary);
+}
+
+.cc-legend__swatch--am {
+  background: var(--amber);
+}
+
+.cc-legend__swatch--closed {
+  background: #c7d1cf;
+}
+
+.cc-legend__swatch--irregular {
+  background: var(--coral);
+}
+
+/* ---------- 区切り線 ---------- */
+
+.cc-card__divider {
+  height: 1px;
+  margin: 18px 0;
+  background: var(--line);
+}
+
+/* ---------- 詳細パネル ---------- */
+
+.cc-detail {
+  background: var(--primary-soft);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 16px;
+}
+
+.cc-detail__date {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.cc-detail__hours {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.cc-detail__hours.is-closed-text {
+  color: var(--coral);
+}
+
+/* ---------- 通常診療時間テーブル ---------- */
+
+.cc-weekly__title {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.cc-weekly__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.cc-weekly__table th,
+.cc-weekly__table td {
+  padding: 7px 6px;
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.cc-weekly__table thead th {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 11px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cc-weekly__table tbody th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.cc-weekly__table td.is-closed {
+  color: var(--coral);
+  font-weight: 700;
+}
+
+/* ---------- 連絡先 ---------- */
+
+.cc-contact {
+  margin-top: 16px;
+}
+
+.cc-contact__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0 0 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.cc-contact__row span:last-child {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* ---------- レスポンシブ ---------- */
+
+@media (max-width: 400px) {
+  .cc-card__body {
+    padding: 22px 16px 20px;
+  }
+
+  .cc-day {
+    font-size: 12px;
+  }
+}

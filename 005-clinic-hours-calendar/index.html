@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClaudeParts. 005 / 診療時間・休診日カレンダー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="jc-page-header">
+  <p class="jc-page-header__eyebrow">ClaudeParts. 005</p>
+  <h1 class="jc-page-header__title">診療時間・休診日カレンダー</h1>
+  <p class="jc-page-header__desc">月間カレンダーで診療日・休診日を色分け表示するパーツです。日付をクリックすると、その日の診療時間が下部に表示されます。</p>
+</header>
+
+<main class="jc-stage">
+
+  <article class="cc-card" aria-label="診療時間・休診日カレンダー">
+
+    <div class="cc-card__top"></div>
+
+    <div class="cc-card__body">
+
+      <div class="cc-card__head">
+        <div class="cc-card__head-text">
+          <p class="cc-card__eyebrow">CLINIC CALENDAR</p>
+          <h2 class="cc-card__title">おじこ内科クリニック</h2>
+        </div>
+        <div class="cc-card__nav">
+          <button type="button" class="cc-nav-btn" id="prevMonth" aria-label="前の月">‹</button>
+          <p class="cc-card__month" id="monthLabel">2026年7月</p>
+          <button type="button" class="cc-nav-btn" id="nextMonth" aria-label="次の月">›</button>
+        </div>
+      </div>
+
+      <svg class="cc-pulse-line" viewBox="0 0 400 32" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,16 L140,16 L156,4 L172,28 L188,16 L400,16" />
+      </svg>
+
+      <div class="cc-calendar">
+        <div class="cc-calendar__weekdays">
+          <span class="is-sun">日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span class="is-sat">土</span>
+        </div>
+        <div class="cc-calendar__grid" id="calendarGrid" role="grid"></div>
+      </div>
+
+      <ul class="cc-legend">
+        <li class="cc-legend__item"><i class="cc-legend__swatch cc-legend__swatch--open" aria-hidden="true"></i>診療日</li>
+        <li class="cc-legend__item"><i class="cc-legend__swatch cc-legend__swatch--am" aria-hidden="true"></i>午前診療のみ</li>
+        <li class="cc-legend__item"><i class="cc-legend__swatch cc-legend__swatch--closed" aria-hidden="true"></i>休診日</li>
+        <li class="cc-legend__item"><i class="cc-legend__swatch cc-legend__swatch--irregular" aria-hidden="true"></i>臨時休診</li>
+      </ul>
+
+      <div class="cc-card__divider" aria-hidden="true"></div>
+
+      <div class="cc-detail" id="dayDetail">
+        <p class="cc-detail__date" id="detailDate">日付を選択してください</p>
+        <p class="cc-detail__hours" id="detailHours">カレンダーの日付をクリックすると、診療時間の詳細がここに表示されます。</p>
+      </div>
+
+      <div class="cc-card__divider" aria-hidden="true"></div>
+
+      <div class="cc-weekly">
+        <p class="cc-weekly__title">通常診療時間</p>
+        <table class="cc-weekly__table">
+          <thead>
+            <tr><th scope="col"></th><th scope="col">午前</th><th scope="col">午後</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">月・火・水・金</th><td>9:00-12:30</td><td>14:30-18:00</td></tr>
+            <tr><th scope="row">木曜</th><td>9:00-12:30</td><td class="is-closed">休診</td></tr>
+            <tr><th scope="row">土曜</th><td>9:00-13:00</td><td class="is-closed">休診</td></tr>
+            <tr><th scope="row">日曜・祝日</th><td class="is-closed" colspan="2">休診</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cc-contact">
+        <p class="cc-contact__row"><span>お電話でのお問い合わせ</span><span>0120-XXX-XXX</span></p>
+        <p class="cc-contact__row"><span>最終受付</span><span>診療終了30分前まで</span></p>
+      </div>
+
+    </div>
+  </article>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
