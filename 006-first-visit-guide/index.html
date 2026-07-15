@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClaudeParts. 006 / 初診の方向けフローチャート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="jc-page-header">
+  <p class="jc-page-header__eyebrow">ClaudeParts. 006</p>
+  <h1 class="jc-page-header__title">初診の方向けフローチャート</h1>
+  <p class="jc-page-header__desc">来院から会計までの流れを、持ち物・所要時間つきで案内するパーツです。チェックを入れながら進めば、来院中のガイドとしても使えます。</p>
+</header>
+
+<main class="jc-stage">
+
+  <article class="fc-card" aria-label="初診の方向けフローチャート">
+
+    <div class="fc-card__top"></div>
+
+    <div class="fc-card__body">
+
+      <div class="fc-card__head">
+        <p class="fc-card__eyebrow">FIRST VISIT GUIDE</p>
+        <h2 class="fc-card__title">はじめて受診される方へ</h2>
+      </div>
+
+      <div class="fc-summary">
+        <div class="fc-summary__time">
+          <span class="fc-summary__label">来院から会計まで 目安</span>
+          <span class="fc-summary__value" id="totalTime">45分</span>
+        </div>
+        <div class="fc-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressBar">
+          <div class="fc-progress__fill" id="progressFill"></div>
+        </div>
+        <p class="fc-summary__remain" id="remainText">チェックを入れると、残り時間の目安が更新されます</p>
+      </div>
+
+      <ol class="fc-steps" id="stepsList">
+
+        <li class="fc-step" data-minutes="0">
+          <button type="button" class="fc-step__mark" aria-label="完了にする">
+            <span class="fc-step__num">1</span>
+            <span class="fc-step__check">✓</span>
+          </button>
+          <div class="fc-step__body">
+            <p class="fc-step__title">お電話でご予約</p>
+            <p class="fc-step__desc">お電話またはWeb予約フォームより、ご希望の日時をお伝えください。</p>
+            <div class="fc-step__meta">
+              <span class="fc-chip fc-chip--item">持ち物：特になし</span>
+              <span class="fc-chip fc-chip--time">所要時間：目安なし</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="fc-step" data-minutes="10">
+          <button type="button" class="fc-step__mark" aria-label="完了にする">
+            <span class="fc-step__num">2</span>
+            <span class="fc-step__check">✓</span>
+          </button>
+          <div class="fc-step__body">
+            <p class="fc-step__title">受付・問診票のご記入</p>
+            <p class="fc-step__desc">受付で保険証をご提示のうえ、問診票にご記入をお願いします。</p>
+            <div class="fc-step__meta">
+              <span class="fc-chip fc-chip--item">持ち物：保険証・お薬手帳・紹介状（あれば）</span>
+              <span class="fc-chip fc-chip--time">所要時間：約10分</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="fc-step" data-minutes="15">
+          <button type="button" class="fc-step__mark" aria-label="完了にする">
+            <span class="fc-step__num">3</span>
+            <span class="fc-step__check">✓</span>
+          </button>
+          <div class="fc-step__body">
+            <p class="fc-step__title">問診・検査</p>
+            <p class="fc-step__desc">看護師が症状をお伺いし、必要に応じて検査を行います。</p>
+            <div class="fc-step__meta">
+              <span class="fc-chip fc-chip--item">持ち物：特になし</span>
+              <span class="fc-chip fc-chip--time">所要時間：約15分</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="fc-step" data-minutes="10">
+          <button type="button" class="fc-step__mark" aria-label="完了にする">
+            <span class="fc-step__num">4</span>
+            <span class="fc-step__check">✓</span>
+          </button>
+          <div class="fc-step__body">
+            <p class="fc-step__title">診察</p>
+            <p class="fc-step__desc">医師が症状や検査結果を確認し、診断・治療方針をご説明します。</p>
+            <div class="fc-step__meta">
+              <span class="fc-chip fc-chip--item">持ち物：気になる症状のメモがあると便利です</span>
+              <span class="fc-chip fc-chip--time">所要時間：約10分</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="fc-step" data-minutes="10">
+          <button type="button" class="fc-step__mark" aria-label="完了にする">
+            <span class="fc-step__num">5</span>
+            <span class="fc-step__check">✓</span>
+          </button>
+          <div class="fc-step__body">
+            <p class="fc-step__title">会計・お薬の説明</p>
+            <p class="fc-step__desc">お会計後、必要な方には院内処方またはお薬の説明を行います。</p>
+            <div class="fc-step__meta">
+              <span class="fc-chip fc-chip--item">持ち物：診察券（次回受診用にお渡しします）</span>
+              <span class="fc-chip fc-chip--time">所要時間：約10分</span>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+
+      <div class="fc-card__divider" aria-hidden="true"></div>
+
+      <div class="fc-items">
+        <p class="fc-items__title">持ち物まとめ</p>
+        <ul class="fc-items__list">
+          <li>保険証</li>
+          <li>お薬手帳（お持ちの方）</li>
+          <li>紹介状（ある場合）</li>
+          <li>医療証・各種受給者証（お持ちの方）</li>
+        </ul>
+      </div>
+
+      <button type="button" class="fc-reset" id="resetBtn">チェックをリセット</button>
+
+    </div>
+  </article>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
