@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClaudeParts. 007 / 院長・スタッフ紹介カード</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="jc-page-header">
+  <p class="jc-page-header__eyebrow">ClaudeParts. 007</p>
+  <h1 class="jc-page-header__title">院長・スタッフ紹介カード</h1>
+  <p class="jc-page-header__desc">院長プロフィールをメインに、スタッフはタブ切り替えで紹介するハイブリッド型のカードです。</p>
+</header>
+
+<main class="jc-stage">
+
+  <article class="pc-card" aria-label="院長・スタッフ紹介カード">
+
+    <div class="pc-card__top"></div>
+
+    <div class="pc-card__body">
+
+      <!-- 院長プロフィール -->
+      <section class="pc-doctor">
+        <p class="pc-eyebrow">DOCTOR PROFILE</p>
+
+        <div class="pc-doctor__head">
+          <div class="pc-avatar pc-avatar--lg" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="18" r="9" fill="currentColor" opacity="0.85"/>
+              <path d="M6 42c1.5-10 8.5-15 18-15s16.5 5 18 15" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
+            </svg>
+          </div>
+          <div class="pc-doctor__head-text">
+            <h2 class="pc-doctor__name">大谷 秀樹</h2>
+            <p class="pc-doctor__role">院長 ／ 内科・消化器内科</p>
+          </div>
+        </div>
+
+        <ul class="pc-doctor__history">
+          <li>医学博士（新潟大学大学院）</li>
+          <li>新潟大学医学部 卒業</li>
+          <li>日本内科学会 認定内科医</li>
+          <li>日本消化器病学会 専門医</li>
+        </ul>
+
+        <blockquote class="pc-doctor__message">
+          <p>「町のかかりつけ医」として、患者さんが気軽に相談できるクリニックを目指しています。どんな小さな症状でも、まずはお話を聞かせてください。</p>
+        </blockquote>
+      </section>
+
+      <div class="pc-card__divider" aria-hidden="true"></div>
+
+      <!-- スタッフ紹介（タブ切り替え） -->
+      <section class="pc-staff">
+        <p class="pc-eyebrow">STAFF</p>
+        <h3 class="pc-staff__title">スタッフ紹介</h3>
+
+        <div class="pc-tabs" role="tablist" id="staffTabs">
+          <button type="button" class="pc-tab is-active" role="tab" aria-selected="true" data-target="staff-1">田中</button>
+          <button type="button" class="pc-tab" role="tab" aria-selected="false" data-target="staff-2">佐藤</button>
+          <button type="button" class="pc-tab" role="tab" aria-selected="false" data-target="staff-3">鈴木</button>
+          <button type="button" class="pc-tab" role="tab" aria-selected="false" data-target="staff-4">高橋</button>
+        </div>
+
+        <div class="pc-staff__panel" id="staffPanel">
+
+          <div class="pc-staff__content is-active" id="staff-1" role="tabpanel">
+            <div class="pc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="18" r="9" fill="currentColor" opacity="0.85"/>
+                <path d="M6 42c1.5-10 8.5-15 18-15s16.5 5 18 15" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
+              </svg>
+            </div>
+            <div class="pc-staff__text">
+              <p class="pc-staff__name">田中 由美</p>
+              <p class="pc-staff__role">看護師長</p>
+              <p class="pc-staff__comment">患者さんが安心して過ごせるよう、笑顔での声かけを心がけています。</p>
+            </div>
+          </div>
+
+          <div class="pc-staff__content" id="staff-2" role="tabpanel" hidden>
+            <div class="pc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="18" r="9" fill="currentColor" opacity="0.85"/>
+                <path d="M6 42c1.5-10 8.5-15 18-15s16.5 5 18 15" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
+              </svg>
+            </div>
+            <div class="pc-staff__text">
+              <p class="pc-staff__name">佐藤 健太</p>
+              <p class="pc-staff__role">看護師</p>
+              <p class="pc-staff__comment">検査や処置の際は、事前にわかりやすくご説明するようにしています。</p>
+            </div>
+          </div>
+
+          <div class="pc-staff__content" id="staff-3" role="tabpanel" hidden>
+            <div class="pc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="18" r="9" fill="currentColor" opacity="0.85"/>
+                <path d="M6 42c1.5-10 8.5-15 18-15s16.5 5 18 15" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
+              </svg>
+            </div>
+            <div class="pc-staff__text">
+              <p class="pc-staff__name">鈴木 花</p>
+              <p class="pc-staff__role">受付</p>
+              <p class="pc-staff__comment">お困りごとがあれば、なんでもお気軽にお声がけください。</p>
+            </div>
+          </div>
+
+          <div class="pc-staff__content" id="staff-4" role="tabpanel" hidden>
+            <div class="pc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="18" r="9" fill="currentColor" opacity="0.85"/>
+                <path d="M6 42c1.5-10 8.5-15 18-15s16.5 5 18 15" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
+              </svg>
+            </div>
+            <div class="pc-staff__text">
+              <p class="pc-staff__name">高橋 誠</p>
+              <p class="pc-staff__role">管理栄養士</p>
+              <p class="pc-staff__comment">生活習慣病の食事相談を担当しています。無理のない改善策を一緒に考えます。</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </article>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

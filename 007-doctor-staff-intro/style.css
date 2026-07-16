@@ -1,0 +1,293 @@
+:root {
+  --bg: #eef4f3;
+  --surface: #ffffff;
+  --primary: #1f7a6c;
+  --primary-soft: #e1f3ef;
+  --amber: #c98a3d;
+  --amber-soft: #faf0e0;
+  --coral: #c4665c;
+  --coral-soft: #f6e8e6;
+  --ink: #1f2a28;
+  --muted: #6d7d7a;
+  --line: #e2eae8;
+
+  --font: "Noto Sans JP", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font);
+  color: var(--ink);
+  padding: 48px 20px 80px;
+}
+
+/* ---------- ページヘッダー ---------- */
+
+.jc-page-header {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.jc-page-header__eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+}
+
+.jc-page-header__title {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.jc-page-header__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.jc-stage {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- カード全体 ---------- */
+
+.pc-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin-top: 4px;
+}
+
+.pc-card__top {
+  height: 5px;
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(90deg, var(--primary), #4ba393);
+}
+
+.pc-card__body {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  padding: 28px 24px 26px;
+  box-shadow: 0 12px 32px rgba(31, 42, 40, 0.06);
+}
+
+.pc-eyebrow {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--primary);
+}
+
+/* ---------- アバター（共通） ---------- */
+
+.pc-avatar {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pc-avatar svg {
+  width: 60%;
+  height: 60%;
+}
+
+.pc-avatar--lg {
+  width: 72px;
+  height: 72px;
+}
+
+/* ---------- 院長プロフィール ---------- */
+
+.pc-doctor__head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.pc-doctor__name {
+  margin: 0 0 2px;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.pc-doctor__role {
+  margin: 0;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.pc-doctor__history {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.pc-doctor__history li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.pc-doctor__history li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.pc-doctor__message {
+  margin: 0;
+  padding: 14px 16px;
+  background: var(--primary-soft);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 8px 8px 0;
+}
+
+.pc-doctor__message p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+/* ---------- 区切り線 ---------- */
+
+.pc-card__divider {
+  height: 1px;
+  margin: 22px 0;
+  background: var(--line);
+}
+
+/* ---------- スタッフ紹介 ---------- */
+
+.pc-staff__title {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.pc-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.pc-tab {
+  flex: none;
+  font-family: var(--font);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--muted);
+  background: #f6faf9;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.pc-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.pc-tab.is-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.pc-staff__panel {
+  min-height: 96px;
+}
+
+.pc-staff__content {
+  display: none;
+  align-items: flex-start;
+  gap: 14px;
+  animation: pc-fade-in 0.25s ease;
+}
+
+.pc-staff__content.is-active {
+  display: flex;
+}
+
+@keyframes pc-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pc-staff__name {
+  margin: 0 0 2px;
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+.pc-staff__role {
+  margin: 0 0 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.pc-staff__comment {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ---------- レスポンシブ ---------- */
+
+@media (max-width: 400px) {
+  .pc-card__body {
+    padding: 24px 16px 22px;
+  }
+
+  .pc-doctor__head {
+    gap: 12px;
+  }
+}
