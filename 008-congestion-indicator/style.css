@@ -1,0 +1,295 @@
+:root {
+  --bg: #eef4f3;
+  --surface: #ffffff;
+  --primary: #1f7a6c;
+  --primary-soft: #e1f3ef;
+  --amber: #c98a3d;
+  --amber-soft: #faf0e0;
+  --coral: #c4665c;
+  --coral-soft: #f6e8e6;
+  --ink: #1f2a28;
+  --muted: #6d7d7a;
+  --line: #e2eae8;
+
+  --font: "Noto Sans JP", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font);
+  color: var(--ink);
+  padding: 48px 20px 80px;
+}
+
+/* ---------- ページヘッダー ---------- */
+
+.jc-page-header {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.jc-page-header__eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--primary);
+}
+
+.jc-page-header__title {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.jc-page-header__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.jc-stage {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- カード全体 ---------- */
+
+.ic-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  margin-top: 4px;
+}
+
+.ic-card__top {
+  height: 5px;
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(90deg, var(--primary), #4ba393);
+  transition: background 0.3s ease;
+}
+
+.ic-card__body {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  padding: 28px 24px 24px;
+  box-shadow: 0 12px 32px rgba(31, 42, 40, 0.06);
+}
+
+.ic-eyebrow {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--primary);
+}
+
+.ic-title {
+  margin: 0 0 20px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- ステータス表示 ---------- */
+
+.ic-status {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--primary-soft);
+  margin-bottom: 14px;
+  transition: background 0.3s ease;
+}
+
+.ic-status__icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.ic-status__label {
+  margin: 0 0 2px;
+  font-size: 19px;
+  font-weight: 900;
+  color: var(--primary);
+  transition: color 0.3s ease;
+}
+
+.ic-status__sub {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* ---------- 混雑レベルゲージ ---------- */
+
+.ic-gauge {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+
+.ic-gauge__seg {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--line);
+  transition: background 0.3s ease;
+}
+
+.ic-gauge__seg.is-on {
+  background: var(--primary);
+}
+
+/* ---------- メタ情報 ---------- */
+
+.ic-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ic-meta__item {
+  background: #f6faf9;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.ic-meta__label {
+  margin: 0 0 4px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.ic-meta__value {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.ic-updated {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  text-align: right;
+}
+
+/* ---------- 区切り線 ---------- */
+
+.ic-card__divider {
+  height: 1px;
+  margin: 20px 0 16px;
+  background: var(--line);
+}
+
+/* ---------- デモ切り替え ---------- */
+
+.ic-demo__label {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.ic-demo__buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.ic-demo__btn {
+  flex: 1;
+  font-family: var(--font);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--muted);
+  background: #f6faf9;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 4px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.ic-demo__btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.ic-demo__btn.is-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* ---------- ステータスごとの配色 ---------- */
+
+.ic-card.is-busy .ic-card__top {
+  background: linear-gradient(90deg, var(--amber), #dba758);
+}
+
+.ic-card.is-busy .ic-status {
+  background: var(--amber-soft);
+}
+
+.ic-card.is-busy .ic-status__icon,
+.ic-card.is-busy .ic-status__label {
+  color: var(--amber);
+}
+
+.ic-card.is-busy .ic-gauge__seg.is-on {
+  background: var(--amber);
+}
+
+.ic-card.is-full .ic-card__top {
+  background: linear-gradient(90deg, var(--coral), #d68880);
+}
+
+.ic-card.is-full .ic-status {
+  background: var(--coral-soft);
+}
+
+.ic-card.is-full .ic-status__icon,
+.ic-card.is-full .ic-status__label {
+  color: var(--coral);
+}
+
+.ic-card.is-full .ic-gauge__seg.is-on {
+  background: var(--coral);
+}
+
+/* ---------- レスポンシブ ---------- */
+
+@media (max-width: 400px) {
+  .ic-card__body {
+    padding: 24px 16px 20px;
+  }
+
+  .ic-status {
+    padding: 14px;
+  }
+}

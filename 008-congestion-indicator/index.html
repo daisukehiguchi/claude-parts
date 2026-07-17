@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClaudeParts. 008 / 混雑状況インジケーター</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="jc-page-header">
+  <p class="jc-page-header__eyebrow">ClaudeParts. 008</p>
+  <h1 class="jc-page-header__title">混雑状況インジケーター</h1>
+  <p class="jc-page-header__desc">待合室の混雑状況を「空いてます／やや混雑／混雑中」の3段階で表示するパーツです。カード下部のボタンで状態を切り替えられます（実運用では受付システム等の実データに接続してください）。</p>
+</header>
+
+<main class="jc-stage">
+
+  <article class="ic-card" aria-label="混雑状況インジケーター">
+
+    <div class="ic-card__top"></div>
+
+    <div class="ic-card__body">
+
+      <p class="ic-eyebrow">WAITING ROOM STATUS</p>
+      <h2 class="ic-title">おじこ内科クリニック</h2>
+
+      <div class="ic-status" id="statusDisplay">
+        <div class="ic-status__icon" id="statusIcon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="3"/>
+            <path d="M16 25l5 5 11-12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="ic-status__text">
+          <p class="ic-status__label" id="statusLabel">空いてます</p>
+          <p class="ic-status__sub" id="statusSub">今なら待ち時間はほとんどありません</p>
+        </div>
+      </div>
+
+      <div class="ic-gauge" role="img" aria-label="混雑レベル">
+        <span class="ic-gauge__seg" id="seg1"></span>
+        <span class="ic-gauge__seg" id="seg2"></span>
+        <span class="ic-gauge__seg" id="seg3"></span>
+      </div>
+
+      <div class="ic-meta">
+        <div class="ic-meta__item">
+          <p class="ic-meta__label">現在の待ち人数</p>
+          <p class="ic-meta__value" id="waitCount">2人</p>
+        </div>
+        <div class="ic-meta__item">
+          <p class="ic-meta__label">目安の待ち時間</p>
+          <p class="ic-meta__value" id="waitTime">〜10分</p>
+        </div>
+      </div>
+
+      <p class="ic-updated" id="updatedAt">最終更新：たった今</p>
+
+      <div class="ic-card__divider" aria-hidden="true"></div>
+
+      <div class="ic-demo">
+        <p class="ic-demo__label">デモ用：状況を切り替える</p>
+        <div class="ic-demo__buttons">
+          <button type="button" class="ic-demo__btn" data-status="empty">空いてます</button>
+          <button type="button" class="ic-demo__btn" data-status="busy">やや混雑</button>
+          <button type="button" class="ic-demo__btn" data-status="full">混雑中</button>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
