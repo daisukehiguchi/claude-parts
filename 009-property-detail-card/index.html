@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClaudeParts. 009 / 物件詳細カード</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="jc-page-header">
+  <p class="jc-page-header__eyebrow">ClaudeParts. 009</p>
+  <h1 class="jc-page-header__title">物件詳細カード</h1>
+  <p class="jc-page-header__desc">間取り・価格帯を中心にまとめた、不動産向けの物件詳細カードです。ここから業種が変わったので、黒×ゴールドの上質なトーンに一新しています。</p>
+</header>
+
+<main class="jc-stage">
+
+  <article class="pd-card" aria-label="物件詳細カード">
+
+    <div class="pd-visual">
+      <svg class="pd-skyline" viewBox="0 0 460 180" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <rect x="30" y="70" width="46" height="110" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="86" y="40" width="60" height="140" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="156" y="90" width="40" height="90" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="206" y="20" width="70" height="160" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="286" y="60" width="48" height="120" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <rect x="344" y="95" width="52" height="85" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <line x1="0" y1="180" x2="460" y2="180" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+      <button type="button" class="pd-fav" id="favBtn" aria-label="お気に入りに追加" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M12 20s-7-4.35-9.5-8.5C.7 8 2 4.5 5.5 4a5 5 0 0 1 6.5 3 5 5 0 0 1 6.5-3C22 4.5 23.3 8 21.5 11.5 19 15.65 12 20 12 20z" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="pd-card__body">
+
+      <p class="pd-eyebrow">PROPERTY DETAIL</p>
+      <h2 class="pd-title">アルティア新潟駅前 12階</h2>
+      <p class="pd-address">新潟県新潟市中央区弁天 1丁目</p>
+
+      <div class="pd-price">
+        <span class="pd-price__value">4,280</span>
+        <span class="pd-price__unit">万円</span>
+        <span class="pd-price__tax">（税込）</span>
+      </div>
+
+      <div class="pd-card__divider" aria-hidden="true"></div>
+
+      <div class="pd-specs">
+        <div class="pd-specs__item">
+          <p class="pd-specs__label">間取り</p>
+          <p class="pd-specs__value">3LDK</p>
+        </div>
+        <div class="pd-specs__item">
+          <p class="pd-specs__label">専有面積</p>
+          <p class="pd-specs__value">78.5<span class="pd-specs__small">m²</span></p>
+        </div>
+        <div class="pd-specs__item">
+          <p class="pd-specs__label">所在階／階建</p>
+          <p class="pd-specs__value">12F<span class="pd-specs__small">／15階建</span></p>
+        </div>
+        <div class="pd-specs__item">
+          <p class="pd-specs__label">築年数</p>
+          <p class="pd-specs__value">築8<span class="pd-specs__small">年</span></p>
+        </div>
+        <div class="pd-specs__item">
+          <p class="pd-specs__label">最寄り駅</p>
+          <p class="pd-specs__value">新潟駅<span class="pd-specs__small">徒歩6分</span></p>
+        </div>
+        <div class="pd-specs__item">
+          <p class="pd-specs__label">向き</p>
+          <p class="pd-specs__value">南東<span class="pd-specs__small">角部屋</span></p>
+        </div>
+      </div>
+
+      <div class="pd-card__divider" aria-hidden="true"></div>
+
+      <div class="pd-floorplan">
+        <p class="pd-floorplan__title">間取り図</p>
+        <div class="pd-floorplan__diagram" role="img" aria-label="3LDKの簡易間取り図">
+          <div class="pd-room pd-room--ldk">LDK</div>
+          <div class="pd-room pd-room--w1">洋室</div>
+          <div class="pd-room pd-room--w2">洋室</div>
+          <div class="pd-room pd-room--j">和室</div>
+        </div>
+      </div>
+
+      <button type="button" class="pd-cta">この物件について問い合わせる</button>
+
+    </div>
+  </article>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

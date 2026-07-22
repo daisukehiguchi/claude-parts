@@ -1,0 +1,312 @@
+:root {
+  --bg: #101318;
+  --surface: #171b21;
+  --surface-alt: #1d222a;
+  --gold: #c8a24d;
+  --gold-soft: rgba(200, 162, 77, 0.14);
+  --gold-line: rgba(200, 162, 77, 0.35);
+  --ink: #f1efe8;
+  --muted: #9199a3;
+  --line: rgba(241, 239, 232, 0.1);
+
+  --font: "Noto Sans JP", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font);
+  color: var(--ink);
+  padding: 48px 20px 80px;
+}
+
+/* ---------- ページヘッダー ---------- */
+
+.jc-page-header {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.jc-page-header__eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.jc-page-header__title {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.jc-page-header__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.jc-stage {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- カード全体 ---------- */
+
+.pd-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  border: 1px solid var(--gold-line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- ビジュアル（スカイライン） ---------- */
+
+.pd-visual {
+  position: relative;
+  height: 140px;
+  background: linear-gradient(180deg, #1a2029, #12151a);
+  border-bottom: 1px solid var(--gold-line);
+  overflow: hidden;
+}
+
+.pd-skyline {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--gold-line);
+}
+
+.pd-fav {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-line);
+  background: rgba(16, 19, 24, 0.7);
+  color: var(--gold);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.pd-fav svg {
+  width: 18px;
+  height: 18px;
+}
+
+.pd-fav:hover {
+  background: rgba(16, 19, 24, 0.9);
+}
+
+.pd-fav:active {
+  transform: scale(0.92);
+}
+
+.pd-fav.is-active svg path {
+  fill: var(--gold);
+}
+
+/* ---------- カード本文 ---------- */
+
+.pd-card__body {
+  padding: 24px 24px 26px;
+}
+
+.pd-eyebrow {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.pd-title {
+  margin: 0 0 4px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.pd-address {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.pd-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.pd-price__value {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: 0.01em;
+}
+
+.pd-price__unit {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.pd-price__tax {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+/* ---------- 区切り線 ---------- */
+
+.pd-card__divider {
+  height: 1px;
+  margin: 20px 0;
+  background: var(--line);
+}
+
+/* ---------- スペック一覧 ---------- */
+
+.pd-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+}
+
+.pd-specs__label {
+  margin: 0 0 3px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.pd-specs__value {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.pd-specs__small {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-left: 3px;
+}
+
+/* ---------- 間取り図 ---------- */
+
+.pd-floorplan__title {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.pd-floorplan__diagram {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.75fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+  height: 130px;
+  border: 1px solid var(--gold-line);
+  margin-bottom: 22px;
+}
+
+.pd-room {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.pd-room--ldk {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+  background: var(--gold-soft);
+  color: var(--gold);
+}
+
+.pd-room--w1 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.pd-room--w2 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.pd-room--j {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+}
+
+/* ---------- CTA ---------- */
+
+.pd-cta {
+  width: 100%;
+  padding: 14px;
+  font-family: var(--font);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.pd-cta:hover {
+  background: var(--gold);
+  color: #14171c;
+}
+
+/* ---------- レスポンシブ ---------- */
+
+@media (max-width: 400px) {
+  .pd-card__body {
+    padding: 20px 18px 22px;
+  }
+
+  .pd-specs {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 14px;
+  }
+}
