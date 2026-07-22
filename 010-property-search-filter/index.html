@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClaudeParts. 010 / 物件検索フィルターUI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="jc-page-header">
+  <p class="jc-page-header__eyebrow">ClaudeParts. 010</p>
+  <h1 class="jc-page-header__title">物件検索フィルターUI</h1>
+  <p class="jc-page-header__desc">条件タグを複数選んで絞り込む、タグ選択型の物件検索フィルターです。選んだ条件に応じて該当件数の目安が更新されます。Phase 1 最後のパーツです。</p>
+</header>
+
+<main class="jc-stage">
+
+  <article class="sf-card" aria-label="物件検索フィルターUI">
+
+    <div class="sf-card__top"></div>
+
+    <div class="sf-card__body">
+
+      <p class="sf-eyebrow">PROPERTY SEARCH</p>
+      <h2 class="sf-title">物件をさがす</h2>
+
+      <div class="sf-group">
+        <p class="sf-group__label">エリア</p>
+        <div class="sf-quick" data-group="area">
+          <button type="button" class="sf-quick__btn is-active" data-value="all" data-factor="1">指定なし</button>
+          <button type="button" class="sf-quick__btn" data-value="chuo" data-factor="0.32">中央区</button>
+          <button type="button" class="sf-quick__btn" data-value="higashi" data-factor="0.22">東区</button>
+          <button type="button" class="sf-quick__btn" data-value="nishi" data-factor="0.24">西区</button>
+        </div>
+      </div>
+
+      <div class="sf-group">
+        <p class="sf-group__label">価格帯</p>
+        <div class="sf-quick" data-group="price">
+          <button type="button" class="sf-quick__btn is-active" data-value="all" data-factor="1">指定なし</button>
+          <button type="button" class="sf-quick__btn" data-value="p1" data-factor="0.35">〜3000万円</button>
+          <button type="button" class="sf-quick__btn" data-value="p2" data-factor="0.4">〜4500万円</button>
+          <button type="button" class="sf-quick__btn" data-value="p3" data-factor="0.2">4500万円〜</button>
+        </div>
+      </div>
+
+      <div class="sf-group">
+        <p class="sf-group__label">間取り</p>
+        <div class="sf-quick" data-group="layout">
+          <button type="button" class="sf-quick__btn is-active" data-value="all" data-factor="1">指定なし</button>
+          <button type="button" class="sf-quick__btn" data-value="l1" data-factor="0.3">1〜2LDK</button>
+          <button type="button" class="sf-quick__btn" data-value="l2" data-factor="0.45">3LDK</button>
+          <button type="button" class="sf-quick__btn" data-value="l3" data-factor="0.25">4LDK以上</button>
+        </div>
+      </div>
+
+      <div class="sf-card__divider" aria-hidden="true"></div>
+
+      <div class="sf-group">
+        <p class="sf-group__label">こだわり条件（複数選択可）</p>
+        <div class="sf-tags" id="conditionTags">
+          <button type="button" class="sf-tag" data-factor="0.55">駅徒歩5分以内</button>
+          <button type="button" class="sf-tag" data-factor="0.4">新築・築浅</button>
+          <button type="button" class="sf-tag" data-factor="0.45">ペット可</button>
+          <button type="button" class="sf-tag" data-factor="0.5">角部屋</button>
+          <button type="button" class="sf-tag" data-factor="0.6">南向き</button>
+          <button type="button" class="sf-tag" data-factor="0.55">オートロック</button>
+          <button type="button" class="sf-tag" data-factor="0.5">駐車場あり</button>
+          <button type="button" class="sf-tag" data-factor="0.6">リフォーム済み</button>
+        </div>
+      </div>
+
+      <div class="sf-card__divider" aria-hidden="true"></div>
+
+      <div class="sf-selected" id="selectedWrap" hidden>
+        <p class="sf-selected__label">選択中の条件</p>
+        <div class="sf-selected__list" id="selectedList"></div>
+      </div>
+
+      <button type="button" class="sf-submit" id="submitBtn">
+        <span>この条件で検索する</span>
+        <span class="sf-submit__count" id="resultCount">128件が該当</span>
+      </button>
+
+    </div>
+  </article>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

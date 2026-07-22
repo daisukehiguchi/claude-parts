@@ -1,0 +1,291 @@
+:root {
+  --bg: #101318;
+  --surface: #171b21;
+  --surface-alt: #1d222a;
+  --gold: #c8a24d;
+  --gold-soft: rgba(200, 162, 77, 0.14);
+  --gold-line: rgba(200, 162, 77, 0.35);
+  --ink: #f1efe8;
+  --muted: #9199a3;
+  --line: rgba(241, 239, 232, 0.1);
+
+  --font: "Noto Sans JP", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font);
+  color: var(--ink);
+  padding: 48px 20px 80px;
+}
+
+/* ---------- ページヘッダー ---------- */
+
+.jc-page-header {
+  max-width: 640px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: var(--ink);
+}
+
+.jc-page-header__eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.jc-page-header__title {
+  margin: 0 0 12px;
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.jc-page-header__desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.jc-stage {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- カード全体 ---------- */
+
+.sf-card {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+}
+
+.sf-card__top {
+  height: 4px;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(90deg, var(--gold), #8a7130);
+}
+
+.sf-card__body {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--gold-line);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 26px 24px 24px;
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.45);
+}
+
+.sf-eyebrow {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+}
+
+.sf-title {
+  margin: 0 0 22px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* ---------- グループ共通 ---------- */
+
+.sf-group {
+  margin-bottom: 18px;
+}
+
+.sf-group__label {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ---------- クイック選択（単一選択） ---------- */
+
+.sf-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sf-quick__btn {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.sf-quick__btn:hover {
+  border-color: var(--gold-line);
+  color: var(--ink);
+}
+
+.sf-quick__btn.is-active {
+  background: var(--gold-soft);
+  border-color: var(--gold);
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ---------- 区切り線 ---------- */
+
+.sf-card__divider {
+  height: 1px;
+  margin: 20px 0;
+  background: var(--line);
+}
+
+/* ---------- 条件タグ（複数選択） ---------- */
+
+.sf-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sf-tag {
+  font-family: var(--font);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.sf-tag::before {
+  content: "+ ";
+  color: var(--muted);
+}
+
+.sf-tag:hover {
+  border-color: var(--gold-line);
+  color: var(--ink);
+}
+
+.sf-tag.is-selected {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #14171c;
+  font-weight: 700;
+}
+
+.sf-tag.is-selected::before {
+  content: "✓ ";
+  color: #14171c;
+}
+
+/* ---------- 選択中の条件 ---------- */
+
+.sf-selected {
+  margin-bottom: 16px;
+}
+
+.sf-selected__label {
+  margin: 0 0 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.sf-selected__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sf-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--gold);
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-line);
+  border-radius: 999px;
+  padding: 5px 10px 5px 12px;
+}
+
+.sf-chip__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border: none;
+  background: none;
+  color: var(--gold);
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ---------- 検索ボタン ---------- */
+
+.sf-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
+  padding: 15px;
+  font-family: var(--font);
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.sf-submit:hover {
+  opacity: 0.9;
+}
+
+.sf-submit span:first-child {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #14171c;
+}
+
+.sf-submit__count {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(20, 23, 28, 0.7);
+}
+
+/* ---------- レスポンシブ ---------- */
+
+@media (max-width: 400px) {
+  .sf-card__body {
+    padding: 22px 16px 20px;
+  }
+}
