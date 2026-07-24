@@ -15,7 +15,13 @@ export type ComponentMeta = {
 // Phase1 の割り当て（不動産009-012 / 学校013-017 / 通信業018-021）を踏襲。
 // Phase2 の範囲は 011〜020。
 export const componentsRegistry: ComponentMeta[] = [
-  { id: "011", category: "realEstate", title: "(未着手)", status: "not-started" },
+  {
+    id: "011",
+    category: "realEstate",
+    title: "住まいの、設計思想。",
+    status: "done",
+    description: "モノクローム・エディトリアルな物件情報カード",
+  },
   { id: "012", category: "realEstate", title: "(未着手)", status: "not-started" },
   { id: "013", category: "school", title: "(未着手)", status: "not-started" },
   { id: "014", category: "school", title: "(未着手)", status: "not-started" },

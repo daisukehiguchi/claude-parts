@@ -37,14 +37,16 @@ export type Category = "realEstate" | "school" | "telecom";
 export const designSystems: Record<Category, DesignTokens> = {
   realEstate: {
     label: "不動産",
-    colorPrimary: "#1a1a1a",
-    colorSecondary: "#f5f5f4",
-    colorAccent: "#b08968",
+    // モノクローム・エディトリアル。色で装飾せず、罫線と余白と明朝体の大きさで魅せる。
+    colorPrimary: "#111111", // 見出し・強い罫線
+    colorSecondary: "#dddddd", // 弱い罫線・補助線
+    colorAccent: "#888888", // ラベル・キャプション
     colorSurface: "#ffffff",
-    colorText: "#171717",
-    fontHeading: "inherit",
-    fontBody: "inherit",
-    concept: "TODO: 不動産カテゴリのデザインコンセプト未確定",
+    colorText: "#333333", // 本文
+    fontHeading: "var(--font-zen-old-mincho)",
+    fontBody: "var(--font-noto-sans-jp)",
+    concept:
+      "モノクローム・エディトリアル。装飾色を排し、1pxの罫線・余白・明朝体の大小で高級感を作る。ラベルは（011）不動産のようにナンバリング＋英字トラッキングで表示する。",
   },
   school: {
     label: "学校",
